@@ -1,10 +1,11 @@
 import React from 'react';
 import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../Pages/Home/HomeScreen';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {screens} from '../Constants';
 import {AppTheme} from '../Theme';
+import LoginScreen from '../Pages/Login/LoginScreen';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import AppStack from './AppStack';
 
 const RootNavigator = () => {
   const {colors} = AppTheme;
@@ -16,20 +17,28 @@ const RootNavigator = () => {
       background: colors.MainAppColor,
     },
   };
-  const initalRouteName = screens.Home;
+  const initalRouteName = screens.Login;
   return (
-    <SafeAreaProvider>
+    <SafeAreaView style={styles.Container}>
       <NavigationContainer theme={navigationDefaultTheme}>
         <Navigator
           initialRouteName={initalRouteName}
           screenOptions={{
-            headerMode: 'false',
+            headerShown: false,
           }}>
-          <Screen name={screens.Home} component={HomeScreen} />
+          <Screen name={screens.Login} component={LoginScreen} />
+          <Screen name={screens.Home} component={AppStack} />
         </Navigator>
       </NavigationContainer>
-    </SafeAreaProvider>
+    </SafeAreaView>
   );
 };
 
 export default RootNavigator;
+
+const styles = StyleSheet.create({
+  Container: {
+    flex: 1,
+    backgroundColor: AppTheme.colors.MainAppColor,
+  },
+});
