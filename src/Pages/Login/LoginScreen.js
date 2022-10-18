@@ -8,10 +8,8 @@ import {
 } from 'react-native';
 import React from 'react';
 import InputText from '../../Components/InputText';
-import Button from '../../Components/CustomButton';
 import {moderateScale} from 'react-native-size-matters';
 import CustomButton from '../../Components/CustomButton';
-import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = React.useState('');

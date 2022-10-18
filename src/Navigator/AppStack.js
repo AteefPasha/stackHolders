@@ -9,6 +9,7 @@ import CustomDrawer from './CustomDrawer';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {AppTheme} from '../Theme';
 import {color} from 'react-native-reanimated';
+import CustomHeader from '../Components/CustomHeader';
 
 const Drawer = createDrawerNavigator();
 
@@ -18,7 +19,7 @@ export default function AppStack() {
     <Drawer.Navigator
       drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
-        headerShown: true,
+        headerShown: false,
         drawerActiveBackgroundColor: AppTheme.colors.primary,
         drawerActiveTintColor: AppTheme.colors.white,
         drawerInactiveTintColor: AppTheme.colors.black,
@@ -37,15 +38,7 @@ export default function AppStack() {
           ),
         }}
       />
-      <Drawer.Screen
-        name="Clients"
-        options={{
-          drawerIcon: () => (
-            <Icon name="people-outline" size={24} color={color} />
-          ),
-        }}
-        component={ClientsScreen}
-      />
+
       <Drawer.Screen
         name="Projects"
         component={ProjectsScreen}

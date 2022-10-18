@@ -4,6 +4,7 @@ export const AppTheme = {
     primary: '#6729ff',
     white: 'white',
     black: 'black',
+
     // primary: 'rgb(15, 15, 15)',
   },
 };

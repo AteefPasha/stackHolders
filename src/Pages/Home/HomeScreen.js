@@ -1,12 +1,15 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import CustomHeader from '../../Components/CustomHeader';
 
 const HomeScreen = () => {
   return (
-    <View style={styles.Container}>
-      <Text style={styles.Text}>HEllo</Text>
-      <View style={styles.Header}></View>
-      <View style={styles.Footer}></View>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <CustomHeader title="Home" />
+      </View>
+      <View style={styles.body} />
+      <View style={styles.footer} />
     </View>
   );
 };
@@ -14,24 +17,11 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  Container: {
+  container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
   },
-  Text: {
-    fontSize: 20,
-    color: 'white',
-  },
-  Header: {
-    flex: 1,
-
-    width: '100%',
-  },
-
-  Footer: {
-    flex: 1,
-
-    width: '100%',
-  },
+  header: {flex: 0.7},
+  body: {flex: 7},
+  footer: {flex: 1},
 });

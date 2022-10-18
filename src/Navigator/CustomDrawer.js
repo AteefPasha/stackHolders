@@ -6,6 +6,7 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 import {AppTheme} from '../Theme';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const CustomDrawer = props => {
   return (
@@ -35,7 +36,10 @@ const CustomDrawer = props => {
         </View>
       </DrawerContentScrollView>
       <View style={styles.Footer}>
-        <Text style={styles.FooterText}>Footer</Text>
+        <View style={styles.Logout}>
+          <Icon name="logout" size={24} color="black" />
+          <Text style={styles.LogoutText}>Logout</Text>
+        </View>
       </View>
     </View>
   );
@@ -58,5 +62,17 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     flex: 1,
     backgroundColor: 'white',
+  },
+  Logout: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingBottom: 30,
+    marginLeft: 10,
+  },
+  LogoutText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 10,
   },
 });
